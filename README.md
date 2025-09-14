@@ -15,7 +15,4 @@ It provides practice modes for learning **referee signals, fouls, violations, nu
 - **Auto Timer Mode** → Automatically generate new training prompts every X seconds.  
 - **Interactive Arrows** → Clear visual cues for offense direction.  
 
----
-
-## 📂 Project Structure
 

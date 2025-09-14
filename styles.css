@@ -1,0 +1,468 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #1a1a1a;
+    color: #ffffff;
+    min-height: 100vh;
+    touch-action: manipulation;
+    -webkit-text-size-adjust: 100%;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2.5rem;
+    color: #ff6b35;
+}
+
+.training-modes {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin-bottom: 30px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.mode-btn {
+    padding: 12px 20px;
+    font-size: 1rem;
+    background-color: #333;
+    color: #fff;
+    border: 2px solid #ff6b35;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mode-btn:hover {
+    background-color: #ff6b35;
+    transform: translateY(-2px);
+}
+
+.mode-btn.active {
+    background-color: #ff6b35;
+    box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
+}
+
+.timer-controls {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 30px;
+    gap: 10px;
+}
+
+.timer-title {
+    text-align: center;
+}
+
+.timer-title h3 {
+    color: #ff6b35;
+    font-size: 1.2rem;
+    margin: 0;
+}
+
+.timer-section {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background-color: #333;
+    padding: 12px 20px;
+    border-radius: 8px;
+    border: 1px solid #555;
+    max-width: 600px;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.timer-section label {
+    color: #fff;
+    font-size: 1rem;
+}
+
+.timer-input {
+    width: 60px;
+    padding: 5px 10px;
+    border: 1px solid #555;
+    border-radius: 4px;
+    background-color: #2a2a2a;
+    color: #fff;
+    text-align: center;
+}
+
+.timer-btn {
+    padding: 8px 16px;
+    background-color: #ff6b35;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.timer-btn:hover:not(:disabled) {
+    background-color: #e55a2b;
+}
+
+.timer-btn:disabled {
+    background-color: #666;
+    cursor: not-allowed;
+}
+
+.timer-status {
+    color: #ccc;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+.timer-unit {
+    color: #fff;
+    font-size: 0.9rem;
+}
+
+.training-area {
+    background-color: #2a2a2a;
+    border-radius: 12px;
+    padding: 30px;
+    min-height: 400px;
+}
+
+.training-section {
+    text-align: center;
+}
+
+.training-section h2 {
+    margin-bottom: 30px;
+    color: #ff6b35;
+    font-size: 2rem;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.display-area {
+    margin: 30px 0;
+    padding: 40px;
+    background-color: #1a1a1a;
+    border-radius: 10px;
+    border: 3px solid #ff6b35;
+}
+
+.large-display {
+    font-size: 4rem;
+    font-weight: bold;
+    min-height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+}
+
+.foul-display {
+    font-size: 2rem;
+    line-height: 1.5;
+    min-height: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+}
+
+.oob-display {
+    font-size: 2rem;
+    line-height: 1.5;
+    min-height: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+}
+
+.team-colors {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.team {
+    padding: 15px 30px;
+    border-radius: 8px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    min-width: 150px;
+}
+
+.offense-indicator {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.offense-text {
+    color: #ff6b35;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.direction-arrows {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+
+.arrow {
+    font-size: 3rem;
+    padding: 10px 20px;
+    background-color: #333;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.arrow:hover {
+    background-color: #ff6b35;
+    transform: scale(1.1);
+}
+
+.arrow.active {
+    background-color: #ff6b35;
+    box-shadow: 0 0 20px rgba(255, 107, 53, 0.5);
+}
+
+.generate-btn {
+    padding: 15px 40px;
+    font-size: 1.3rem;
+    background-color: #ff6b35;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 20px;
+}
+
+.generate-btn:hover {
+    background-color: #e55a2b;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
+}
+
+.foul-info {
+    margin-top: 15px;
+}
+
+.foul-name {
+    font-size: 2.2rem;
+    margin-bottom: 10px;
+}
+
+.foul-details {
+    font-size: 1.4rem;
+    color: #ccc;
+}
+
+.player-info {
+    margin-top: 20px;
+    font-size: 1.6rem;
+}
+
+.oob-info {
+    text-align: center;
+}
+
+.oob-main {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.oob-last-touch {
+    font-size: 1.8rem;
+    color: #ff6b35;
+}
+
+.last-touch-team {
+    color: #ffffff;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+    
+    h1 {
+        font-size: 1.8rem;
+        margin-bottom: 20px;
+    }
+    
+    .training-modes {
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+        margin-bottom: 20px;
+    }
+    
+    .mode-btn {
+        padding: 10px 15px;
+        font-size: 0.9rem;
+        min-height: 45px;
+    }
+    
+    .timer-controls {
+        margin-bottom: 20px;
+    }
+    
+    .timer-section {
+        gap: 8px;
+        padding: 12px;
+        text-align: center;
+    }
+    
+    .timer-title h3 {
+        font-size: 1rem;
+    }
+    
+    .timer-input {
+        width: 50px;
+    }
+    
+    .timer-unit {
+        font-size: 0.8rem;
+    }
+    
+    .timer-btn {
+        padding: 8px 10px;
+        font-size: 0.8rem;
+    }
+    
+    .timer-status {
+        font-size: 0.8rem;
+    }
+    
+    .training-area {
+        padding: 20px;
+        margin: 0 -5px;
+    }
+    
+    .training-section h2 {
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+    }
+    
+    .display-area {
+        padding: 20px;
+        margin: 20px 0;
+    }
+    
+    .large-display {
+        font-size: 2.5rem;
+        min-height: 80px;
+    }
+    
+    .foul-display, .oob-display {
+        font-size: 1.5rem;
+        min-height: 120px;
+    }
+    
+    .offense-text {
+        font-size: 1rem;
+    }
+    
+    .direction-arrows {
+        gap: 20px;
+    }
+    
+    .arrow {
+        font-size: 2.5rem;
+        padding: 8px 15px;
+    }
+    
+    .generate-btn {
+        width: 90%;
+        max-width: 250px;
+        padding: 12px 30px;
+        font-size: 1.1rem;
+    }
+    
+    .player-info {
+        font-size: 1.4rem;
+    }
+    
+    .foul-name {
+        font-size: 1.8rem;
+    }
+    
+    .foul-details {
+        font-size: 1.2rem;
+    }
+    
+    .oob-main {
+        font-size: 2rem;
+    }
+    
+    .oob-last-touch {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 5px;
+    }
+    
+    h1 {
+        font-size: 1.5rem;
+    }
+    
+    .timer-section {
+        padding: 10px;
+    }
+    
+    .training-area {
+        padding: 15px;
+    }
+    
+    .display-area {
+        padding: 15px;
+    }
+    
+    .large-display {
+        font-size: 2rem;
+    }
+    
+    .foul-display, .oob-display {
+        font-size: 1.3rem;
+    }
+    
+    .arrow {
+        font-size: 2rem;
+        padding: 6px 12px;
+    }
+    
+    .direction-arrows {
+        gap: 15px;
+    }
+}

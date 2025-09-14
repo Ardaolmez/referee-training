@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basketball Referee Training</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Basketball Referee Training</h1>
+        
+        <div class="training-modes">
+            <button id="numbersBtn" class="mode-btn">Numbers Training</button>
+            <button id="violationsBtn" class="mode-btn">Violations</button>
+            <button id="foulsBtn" class="mode-btn">Fouls</button>
+            <button id="outOfBoundsBtn" class="mode-btn">Out of Bounds</button>
+        </div>
+
+        <div class="timer-controls">
+            <div class="timer-title">
+                <h3>Auto Generating Every:</h3>
+            </div>
+            <div class="timer-section">
+                <input type="number" id="timerInterval" min="1" max="60" value="3" class="timer-input">
+                <span class="timer-unit">seconds</span>
+                <button id="startTimer" class="timer-btn">Start</button>
+                <button id="stopTimer" class="timer-btn" disabled>Stop</button>
+                <span id="timerStatus" class="timer-status">OFF</span>
+            </div>
+        </div>
+
+        <div class="training-area">
+            <div id="numbersTraining" class="training-section hidden">
+                <h2>Numbers Training</h2>
+                <div class="display-area">
+                    <div id="numberDisplay" class="large-display"></div>
+                </div>
+                <button id="generateNumber" class="generate-btn">Generate Number</button>
+            </div>
+
+            <div id="violationsTraining" class="training-section hidden">
+                <h2>Violations Training</h2>
+                <div class="offense-indicator">
+                    <div class="offense-text">Offense Direction:</div>
+                    <div class="direction-arrows">
+                        <div id="violationLeftArrow" class="arrow">←</div>
+                        <div id="violationRightArrow" class="arrow">→</div>
+                    </div>
+                </div>
+                <div class="display-area">
+                    <div id="violationDisplay" class="large-display"></div>
+                </div>
+                <button id="generateViolation" class="generate-btn">Generate Violation</button>
+            </div>
+
+            <div id="foulsTraining" class="training-section hidden">
+                <h2>Fouls Training</h2>
+                <div class="offense-indicator">
+                    <div class="offense-text">Offense Direction:</div>
+                    <div class="direction-arrows">
+                        <div id="leftArrow" class="arrow">←</div>
+                        <div id="rightArrow" class="arrow">→</div>
+                    </div>
+                </div>
+                <div class="display-area">
+                    <div id="foulDisplay" class="foul-display"></div>
+                </div>
+                <button id="generateFoul" class="generate-btn">Generate Foul</button>
+            </div>
+
+            <div id="outOfBoundsTraining" class="training-section hidden">
+                <h2>Out of Bounds Training</h2>
+                <div class="offense-indicator">
+                    <div class="offense-text">Offense Direction:</div>
+                    <div class="direction-arrows">
+                        <div id="oobLeftArrow" class="arrow">←</div>
+                        <div id="oobRightArrow" class="arrow">→</div>
+                    </div>
+                </div>
+                <div class="display-area">
+                    <div id="outOfBoundsDisplay" class="oob-display"></div>
+                </div>
+                <button id="generateOutOfBounds" class="generate-btn">Generate Out of Bounds</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
